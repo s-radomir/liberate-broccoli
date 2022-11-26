@@ -1,2 +1,2 @@
 # liberate-broccoli
-Hello, Himochka!
+Hello, World!
