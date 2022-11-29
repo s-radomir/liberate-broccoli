@@ -7,7 +7,6 @@ pygame.init()
 FPS = 30
 screen = pygame.display.set_mode((500, 500))
 
-
 # code
 def home(xh, yh, h):  # xh, yh - left right corner coordinates; h - similarity coefficient
     rect(screen, (150, 75, 0), (xh, yh, 150 * h, 100 * h), 0)  # house
@@ -36,18 +35,7 @@ def cloud(xc, yc, c):
 
 
 def sun(xs, ys, s, n):
-    circle(screen, (255, 255, 0), (xs, ys), 30 * s)  # sun body
-    for k in range(n + 1):  # sun rays
-        polygon(screen, (255, 255, 0),
-                [(xs + 45 * s * np.cos(np.pi / n * (k - 1 / 2)), ys - 45 * s * np.sin(np.pi / n * (k - 1 / 2))),
-                (xs + 30 * s * np.cos(np.pi * (k - 1) / n), ys - 30 * s * np.sin(np.pi * (k - 1) / n)),
-                (xs + 30 * s * np.cos(np.pi * k / n), ys - 30 * s * np.sin(np.pi * k / n))], 0)
-    for k in range(n + 1):
-        polygon(screen, (255, 255, 0),
-                [(xs + 45 * s * np.cos(np.pi / n * (k - 1 / 2)), ys + 45 * s * np.sin(np.pi / n * (k - 1 / 2))),
-                (xs + 30 * s * np.cos(np.pi * (k - 1) / n), ys + 30 * s * np.sin(np.pi * (k - 1) / n)),
-                (xs + 30 * s * np.cos(np.pi * k / n), ys + 30 * s * np.sin(np.pi * k / n))], 0)
-
+    circle(screen, (255, 255, 0), (xs, ys), 30 * s)
 
 rect(screen, (66, 170, 255), (0, 0, 500, 250), 0)  # sky
 rect(screen, (0, 128, 0), (0, 250, 500, 250), 0)  # grass

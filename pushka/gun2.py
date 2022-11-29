@@ -147,6 +147,8 @@ class Target:
         self.x=self.y=self.r=0
         self.color = RED
         self.new_target()
+        self.vy = random.randint(5, 20)
+        
     def new_target(self):
         """ Инициализация новой цели. """
         x = self.x = random.randint(600, 780)
@@ -160,6 +162,21 @@ class Target:
     def draw(self):
         pygame.draw.circle(screen, self.color, [self.x, self.y], self.r, 0)    
 
+
+    def move(self):
+        """Переместить цель по прошествии единицы времени.
+
+        Метод описывает перемещение мяча за один кадр перерисовки. То есть, обновляет значения
+        self.x и self.y с учетом скоростей self.vx и self.vy,
+        и стен по краям окна (размер окна 800х600).
+        """
+        self.y += self.vy
+        if(self.y <= self.r):
+            self.y = self.r
+            self.vy = -self.vy
+        if(self.y >= 800 - self.r):
+            self.y = 800 - self.r
+            self.vy = -self.vy
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 bullet = 0
@@ -169,6 +186,7 @@ clock = pygame.time.Clock()
 gun = Gun(screen)
 target_1 = Target()
 target_2 = Target()
+targets = [target_1, target_2]
 finished = False
 
 while not finished:
@@ -204,7 +222,8 @@ while not finished:
             target_2.hit()
             target_2.new_target()
             target_2.live = 1
-
+    target_1.move()
+    target_2.move()
     gun.power_up()
 
 pygame.quit()
