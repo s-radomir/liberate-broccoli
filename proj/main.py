@@ -9,6 +9,8 @@ def is_True(c):
 
 
 #Это просто базовые вопросы 
+DATA_FILE = 'plotfile'
+
 print("Retain previous settings? y/n")
 if (not is_True(input())):
     print("Build a graph in just a few seconds!\nEnter lab number:")
@@ -16,10 +18,6 @@ if (not is_True(input())):
     print("Enter graph name/number:")
     graph_num = input()
     GRAPHFILEPATH = '/home/fima/Documents/uni/labs/' + lab_num + '/figs/graph_' + graph_num + '.png' 
-
-    print("Enter datafile name:(in same directory as this program)")
-    DATA_FILE = input()
-
     print('X-axis?(latex)')
     X_axis = input()
     print('Y-axis?(latex)')
