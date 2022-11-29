@@ -49,14 +49,14 @@ Y = []
 erX = []
 erY = []
 
-plt.xlabel(r'M $ \cdot  10^{-2} \: Н \cdot м $')
+plt.xlabel(X_axis)
 plt.ylabel(Y_axis)
 
 for [x, y] in ar:
     X.append(x)
     Y.append(y)
-    erY.append(0)
     erX.append(0)
+    erY.append(0)
 
 
 def count_MNK(X, Y):
