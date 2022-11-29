@@ -76,8 +76,8 @@ def fitline(xdata, xerror, ydata, yerror, col):
     x = np.linspace(min(xdata) * 0.9 ,max(xdata)*1.1,100)
     strL = r'$Y \approx$ ' + str(round(k, ROUND_ON_GRAPH_TO)) + ' $X$ + ' + str(round(b, ROUND_ON_GRAPH_TO));
     [k,dk,b,db] = count_MNK(xdata, ydata)
-    strL += '\n'+r'$\sigma_k=$' + str(round(dk, ROUND_ON_GRAPH_TO)) + r';  $\sigma_b=$' + str(round(dk, ROUND_ON_GRAPH_TO));
-    plt.plot(x, k*x+b, '-', color = 'green', label=strL)
+    strL += '\n'+r'$\sigma_k=$' + str(round(dk, ROUND_ON_GRAPH_TO)) + r';  $\sigma_b=$' + str(round(db, ROUND_ON_GRAPH_TO));
+    plt.plot(x, k * x + b, '-', color = 'green', label=strL)
 fitline(X, erX, Y, erY, 'green')
 
 
