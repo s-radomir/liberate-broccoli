@@ -77,7 +77,11 @@ def fitline(xdata, xerror, ydata, yerror, col):
     strL = r'$Y \approx$ ' + str(round(k, ROUND_ON_GRAPH_TO)) + ' $X$ + ' + str(round(b, ROUND_ON_GRAPH_TO));
     [k,dk,b,db] = count_MNK(xdata, ydata)
     strL += '\n'+r'$\sigma_k=$' + str(round(dk, ROUND_ON_GRAPH_TO)) + r';  $\sigma_b=$' + str(round(db, ROUND_ON_GRAPH_TO));
+<<<<<<< HEAD
     plt.plot(x, k * x + b, '-', color = 'green', label=strL)
+=======
+    plt.plot(x, k*x+b, '-', color = 'green', label=strL)
+>>>>>>> dc1a74d56fe5fbdbdf1b673ccf756186acc8a24d
 fitline(X, erX, Y, erY, 'green')
 
 
